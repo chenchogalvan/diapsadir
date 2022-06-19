@@ -28,9 +28,6 @@
 						<th scope="col" class="px-6 py-3">
 							Ver QR
 						</th>
-						<th scope="col" class="px-6 py-3">
-							Descargar QR
-						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -55,7 +52,7 @@
                         <td class="px-6 py-4">
 
                             <a
-                            href="#"
+                            href="{{ route('qr_route', $user->slug) }}"
                             @disabled(true)
                             class="border border-slate-500 bg-slate-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-slate-600 focus:outline-none focus:shadow-outline"
                              >
@@ -63,16 +60,10 @@
                           </a>
 
                         </td>
-                        <td class="px-6 py-4 text-right">
-                            <a
-                            href="#" @disabled(true)
-                            class="border border-neutral-500 bg-neutral-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-neutral-600 focus:outline-none focus:shadow-outline"
-                            >
-                            Descargar QR
-                          </a>
-                        </td>
                     </tr>
                     @endforeach
+
+                    {!! QrCode::size(300)->generate('RemoteStack') !!}
 
 				</tbody>
 			</table>
