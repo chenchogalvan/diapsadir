@@ -63,7 +63,6 @@
                     </tr>
                     @endforeach
 
-                    {!! QrCode::size(300)->generate('RemoteStack') !!}
 
 				</tbody>
 			</table>
