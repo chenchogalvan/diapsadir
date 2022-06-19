@@ -38,6 +38,9 @@
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                             {{ $user->name.' '.$user->last_name }}
                         </th>
+                        <td>
+                          {{ route('ver_usuario', $user->slug).';"'.$user->slug.'"'}}
+                        </td>
                         <td class="px-6 py-4">
                             {{ $user->speciality }}
                         </td>
@@ -52,7 +55,7 @@
                         <td class="px-6 py-4">
 
                             <a
-                            href="{{ route('qr_route', $user->slug) }}"
+                            href="#"
                             @disabled(true)
                             class="border border-slate-500 bg-slate-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-slate-600 focus:outline-none focus:shadow-outline"
                              >
