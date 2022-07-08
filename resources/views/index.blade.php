@@ -52,7 +52,7 @@
                         <td class="px-6 py-4">
 
                             <a
-                            href="{{ asset('qr/'.$user->slug.'_.png') }}"
+                            href="{{ asset('qr/'.$user->slug.'.png') }}"
                             download
                             class="border border-slate-500 bg-slate-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-slate-600 focus:outline-none focus:shadow-outline"
                              >
