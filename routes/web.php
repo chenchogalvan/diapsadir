@@ -45,7 +45,7 @@ Route::get('/test', function () {
 
 
     foreach ($users as  $user) {
-        QrCode::format('png')->size(500)->generate(route('ver_usuario', $user->slug), '../public/qr/'.$user->slug.'.png');
+        QrCode::format('png')->size(500)->generate('https://directorio.grupodiapsa.com.mx/card/'.$user->slug, '../public/qr/'.$user->slug.'.png');
     }
 });
 
