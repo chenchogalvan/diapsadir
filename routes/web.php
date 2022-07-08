@@ -4,6 +4,7 @@ use App\Http\Controllers\DataUserController;
 use App\Models\DataUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,13 @@ Route::get('/qr/{slug}', function (DataUser $slug) {
 })->name('qr_route');
 
 Route::post('/exportar', [DataUserController::class, 'exportDataUSer'])->name('export_data');
+
+Route::get('/test', function () {
+    $users = DataUser::all();
+
+
+    foreach ($users as  $user) {
+        QrCode::format('png')->size(500)->generate(route('ver_usuario', $user->slug), '../public/qr/'.$user->slug.'.png');
+    }
+});
 
